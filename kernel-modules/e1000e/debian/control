@@ -1,7 +1,7 @@
 Source: e1000e-source
 Section: main/kernel
 Priority: extra
-Maintainer: Sebastien Delafond <seb@untangle.com>
+Maintainer: Sebastien Delafond <sdelafond@gmail.com>
 Build-Depends: debhelper (>= 5.0.37), dpatch
 Build-Depends-Indep: debconf-utils
 Standards-Version: 3.7.2
