@@ -1,3 +1,1 @@
 lanner-lcd		stretch
-#e1000e			stretch
-#igb			stretch
