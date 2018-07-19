@@ -7,7 +7,7 @@ Build-Depends:
     libnet1-dev, 
     libpcap0.8-dev, 
     libpcre3-dev, 
-    debhelper (>= 9.20160402),
+    debhelper (>= 10),
     libpq-dev, 
     po-debconf (>= 0.5.0), 
     libprelude-dev, 
@@ -29,7 +29,7 @@ Build-Depends-Indep:
     texlive-font-utils,
     texlive-binaries,
     ghostscript
-Standards-Version:  3.9.2
+Standards-Version: 3.9.8
 Homepage: http://www.snort.org/
 Vcs-Git: git://git.debian.org/git/pkg-snort/pkg-snort.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-snort/pkg-snort.git
