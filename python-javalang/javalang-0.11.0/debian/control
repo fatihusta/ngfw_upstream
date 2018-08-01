@@ -8,7 +8,7 @@ Homepage: http://github.com/c2nes/javalang
 
 Package: python-javalang
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}
+Depends: ${misc:Depends}, ${misc:Depends}, ${python:Depends}
 Description: Pure Python Java parser and tools
  javalang is a pure Python library for working with Java source
  code. javalang provies a lexer and parser targeting Java 7. The

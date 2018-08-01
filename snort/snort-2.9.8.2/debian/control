@@ -37,7 +37,7 @@ Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-snort/pkg-snort.git
 Package: snort
 Architecture: i386 amd64 arm64
 Pre-Depends: adduser (>= 3.11)
-Depends: 
+Depends: ${misc:Depends}, 
     snort-common-libraries (>=${binary:Version}),
     snort-rules-default (>= ${source:Version}), 
     snort-common (>= ${source:Version}),
@@ -69,7 +69,7 @@ Description: flexible Network Intrusion Detection System
 Package: snort-common
 Architecture: all
 Pre-Depends: adduser (>= 3.11)
-Depends: 
+Depends: ${misc:Depends}, 
     perl-modules, 
     debconf (>= 0.2.80) | debconf-2.0,
     lsb-base,
@@ -93,7 +93,7 @@ Description: flexible Network Intrusion Detection System [common files]
 
 Package: snort-doc
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, ${misc:Depends}
 Priority: optional
 Section: doc
 Description: Documentation for the Snort IDS [documentation]
@@ -109,7 +109,7 @@ Description: Documentation for the Snort IDS [documentation]
 Package: snort-rules-default
 Provides: snort-rules
 Architecture: all
-Depends: 
+Depends: ${misc:Depends}, 
     debconf (>= 0.2.80) | debconf-2.0, 
     adduser (>= 3.11), 
     ${shlibs:Depends}, 
@@ -128,7 +128,7 @@ Description: flexible Network Intrusion Detection System ruleset
 
 Package: snort-common-libraries
 Architecture: i386 amd64 arm64
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, ${misc:Depends}
 Suggests: snort (>= 2.7.0) | snort-pgsql (>= 2.7.0) | snort-mysql (>= 2.7.0)
 Conflicts: snort-common (<< 2.7.0-6)
 Description: flexible Network Intrusion Detection System ruleset

@@ -8,7 +8,7 @@ Standards-Version: 3.9.8
 
 Package: lanner-lcd-source
 Architecture: all
-Depends: module-assistant
+Depends: ${misc:Depends}, module-assistant
 Recommends:  dpkg-dev, kernel-package, debhelper (>= 10), debconf-utils
 Description: module source for lanner-lcd
  This package provides the source code for the lanner-lcd module.. You

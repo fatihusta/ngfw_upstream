@@ -8,6 +8,6 @@ Homepage: https://github.com/odeke-em/drive
 
 Package: drive
 Architecture: amd64 i386 armel armhf arm64
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, ${misc:Depends}
 Description: Google Drive tool written in Go language
  Command line tool for managing data on Google drive.
