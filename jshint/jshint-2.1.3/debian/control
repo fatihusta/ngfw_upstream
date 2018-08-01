@@ -9,6 +9,6 @@ Standards-Version: 3.9.8
 Package: jshint
 Depends: ${misc:Depends}, spidermonkey-bin | rhino, python
 Architecture: all
-Description: jshint
+Description: jshint library and wrapper script
  The jshint library, plus a wrapper script.
 
