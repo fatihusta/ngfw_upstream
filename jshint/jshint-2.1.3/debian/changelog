@@ -1,3 +1,9 @@
+jshint (2.1.6-1) unstable; urgency=medium
+
+  * Bump up version
+
+ -- Sebastien Delafond <sdelafond@gmail.com>  Thu, 02 Aug 2018 16:12:11 +0200
+
 jshint (2.1.5-1) unstable; urgency=medium
 
   * Change maintainer address
