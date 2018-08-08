@@ -19,15 +19,20 @@ echo $KVERS
 
 DEV="plcm_drv"
 
-# if we are running a 4.x kernel, and the
-# hardcoded node exists, delelte it
-if uname -r | grep '^4' && ls -al /dev/$DEV | grep -q 248 ; then
-  rm /dev/$DEV
+# if the hardcoded node exists on the
+# 4.x kernel, delete it, else make sure
+# its got the right permissions
+if ls -al /dev/$DEV | grep -q 248 ; then
+  if uname -r | grep '^4' ; then
+    rm /dev/$DEV
+  else
+    chmod 666 /dev/$DEV
+  fi
 fi
 
 # only run mknod on the 3.16 kernel
 if grep -q $DEV /etc/rc.local ; then
-  sed -i "s/^mknod \/dev\/$DEV c 248 0/if uname -r | grep -q \'^3\'\; then mknod \/dev\/$DEV c 248 0 ; fi/g" /etc/rc.local
+  sed -i "s/^mknod \/dev\/$DEV c 248 0/if uname -r | grep -q \'^3\'\; then mknod -m 666 \/dev\/$DEV c 248 0 ; fi/g" /etc/rc.local
 fi
 
 # load the module at boot
