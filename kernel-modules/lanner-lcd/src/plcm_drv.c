@@ -8,6 +8,7 @@
 #include <linux/fs.h>
 #include <linux/sched.h>
 #include <linux/delay.h>
+#include <linux/miscdevice.h>
 #include <asm/io.h>
 #include <asm/uaccess.h>
 #include "plcm_ioctl.h"
@@ -26,11 +27,6 @@
  * Driver Version Control
  */
 static unsigned char Driver_Version[] = "0.1.2"; // 2014-08-20
-
-/*
- * Device Major Number
- */
-#define PLCM_MAJOR 248
 
 /*
  * The DISPLAY_CAREFUL_MODE is just usable when the mode of parallel 
@@ -561,22 +557,32 @@ static const struct file_operations plcm_fops = {
 };
 #endif
 
+static struct miscdevice plcm_misc = {
+	.fops		= &plcm_fops,
+	.minor		= MISC_DYNAMIC_MINOR,
+	.name		= "plcm_drv",
+	.mode		= 0666,
+};
+
 int plcm_init(void)
 {
+	int ret;
+
 	/*
-	 * Register the character device
+	 * Register the misc device
 	 */
-	if(register_chrdev(PLCM_MAJOR, "plcm_drv", &plcm_fops))
+	ret = misc_register(&plcm_misc);
+	if(ret < 0)
 	{
-		printk("plcm : unable to get major %d\n", PLCM_MAJOR);
-		return -EIO;
+		printk("plcm : unable to register device %d\n", ret);
+		return ret;
 	}
 	printk("Parallel LCM Driver Version %s is loaded\n", Driver_Version);
 	LCM_Init();
 	if(DataPort == 0)
 	{
 		printk("plcm_drv: unable to access any LPTx\n");
-		unregister_chrdev(PLCM_MAJOR, "plcm_drv");
+		misc_deregister(&plcm_misc);
 		return -EIO;
 	}
 #if 0
@@ -591,7 +597,7 @@ int plcm_init(void)
 void plcm_exit(void)
 {
 	/* Unregister the device */
-	unregister_chrdev(PLCM_MAJOR, "plcm_drv");
+	misc_deregister(&plcm_misc);
 	/* If there's an error, report it */
 	printk("Parallel LCM Driver Version %s is unloaded\n", Driver_Version);
 }

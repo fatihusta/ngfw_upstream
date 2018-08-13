@@ -10,14 +10,21 @@ date -Iseconds
 echo $KVERS
 
 DEV="plcm_drv"
-# take care of creating the device node right away
-if ! [ -c /dev/$DEV ] ; then
-  mknod /dev/$DEV c 248 0
+
+# if the hardcoded node exists on the
+# 4.x kernel, delete it, else make sure
+# its got the right permissions
+if ls -al /dev/$DEV | grep -q 248 ; then
+  if uname -r | grep '^4' ; then
+    rm /dev/$DEV
+  else
+    chmod 666 /dev/$DEV
+  fi
 fi
 
-# also make sure it will get created upon reboot
-if ! grep -q $DEV /etc/rc.local ; then
-  perl -i -pe "s|^exit 0|mknod /dev/$DEV c 248 0\nexit 0|" /etc/rc.local
+# only run mknod on the 3.16 kernel
+if grep -q $DEV /etc/rc.local ; then
+  sed -i "s/^mknod \/dev\/$DEV c 248 0/if uname -r | grep -q \'^3\'\; then mknod -m 666 \/dev\/$DEV c 248 0 ; fi/g" /etc/rc.local
 fi
 
 # load the module at boot
