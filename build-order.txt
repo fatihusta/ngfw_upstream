@@ -6,9 +6,6 @@ iptables/iptables-1.6.0 					stretch
 $sleep 40                                                       stretch
 miniupnpd/miniupnpd-1.8 					stretch
 $sleep 40                                                       stretch
-daq/daq-2.0.6							stretch
-$sleep 40                                                       stretch
-snort/snort-2.9.8.2						stretch
 libnftnl/libnftnl-1.0.7						stretch
 nftables/nftables-0.7						stretch
 
