@@ -860,12 +860,6 @@ static inline void skb_mark_not_on_list(struct sk_buff *skb)
 #endif
 #endif
 
-#if LINUX_VERSION_CODE == KERNEL_VERSION(4, 9, 168)
-#define hsiphash_2u32 siphash_2u32
-#define hsiphash_3u32 siphash_3u32
-#define hsiphash_key_t siphash_key_t
-#endif
-
 /* https://github.com/ClangBuiltLinux/linux/issues/7 */
 #if defined( __clang__) && (!defined(CONFIG_CLANG_VERSION) || CONFIG_CLANG_VERSION < 80000)
 #include <linux/bug.h>
