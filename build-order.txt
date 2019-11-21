@@ -12,6 +12,6 @@ libnftnl/libnftnl-1.0.7						stretch
 nftables/nftables-0.7						stretch
 
 
-kernel-modules/lanner-lcd                                       stretch
+kernel-modules/lanner-lcd                                       stretch,buster
 # kernel-modules/e1000e                                           stretch
 # kernel-modules/igb                                              stretch
