@@ -29,7 +29,7 @@ override_dh_auto_configure:
 	dh_auto_configure
 
 override_dh_auto_build:
-	dh_auto_build -- CONFIG_OPTIONS="--igd2 --ipv6 --leasefile --vendorcfg --pcp-peer --portinuse"
+	dh_auto_build -- CONFIG_OPTIONS="--ipv6 --leasefile --vendorcfg --pcp-peer --portinuse"
 
 override_dh_auto_test:
 	# some test scripts missing from the tarball
