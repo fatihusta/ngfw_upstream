@@ -1,0 +1,2 @@
+# Second update-rc.d call is to enable the service
+duplicate-updaterc.d-calls-in-postinst miniupnpd

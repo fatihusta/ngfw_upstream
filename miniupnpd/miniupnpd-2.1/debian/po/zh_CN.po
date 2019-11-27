@@ -1,0 +1,122 @@
+# Translation of miniupnpd debconf template to Chinese
+# This file is distributed under the same license as the miniupnpd package.
+# Yangfl <mmyangfl@gmail.com>, 2018-2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: miniupnpd\n"
+"Report-Msgid-Bugs-To: miniupnpd@packages.debian.org\n"
+"POT-Creation-Date: 2019-01-06 21:56+0800\n"
+"PO-Revision-Date: 2019-01-06 22:03+0800\n"
+"Last-Translator: Yangfl <mmyangfl@gmail.com>\n"
+"Language-Team: 汉语 <debian-l10n-chinese@lists.debian.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Gtranslator 3.30.1\n"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:2001
+msgid "Start the MiniUPnP daemon automatically?"
+msgstr "自动启动 MiniUPnP 守护进程？"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:2001
+msgid ""
+"Choose this option if the MiniUPnP daemon should start automatically, now "
+"and at boot time."
+msgstr "若希望 MiniUPnP 守护程序现在和启动时自动启动，请选择此选项。"
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:3001
+msgid "Interfaces to listen on for UPnP queries:"
+msgstr "监听 UPnP 查询的 LAN 接口或 IP 地址："
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:3001
+msgid ""
+"The MiniUPnP daemon will listen for requests on the local network. Please "
+"enter the interfaces or IP addresses it should listen on, separated by space."
+msgstr ""
+"MiniUPnP 守护进程将监听本地网络上的请求。请输入应监听的 LAN 接口或 IP 地址，"
+"用空格分开。"
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:3001
+msgid ""
+"Interface names are preferred, and required if you plan to enable IPv6 port "
+"forwarding."
+msgstr "首选输入接口名称，如果您打算启用 IPv6 端口转发，则必须输入名称。"
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:4001
+msgid "External WAN network interface to open ports on:"
+msgstr "要打开端口的外部 WAN 网络接口："
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:4001
+msgid ""
+"The MiniUPnP daemon will listen on a specific IP address on the local "
+"network, then open ports on the WAN interface. Please enter the name of the "
+"WAN network interface on which the MiniUPnP daemon should perform port "
+"forwarding."
+msgstr ""
+"MiniUPnP 守护进程将监听本地网络上的特定 IP 地址，然后打开 WAN 接口上的端口。"
+"请输入 MiniUPnP 守护程序应执行端口转发的 WAN 网络接口的名称。"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:5001
+msgid "Enable IPv6 firewall chain?"
+msgstr "启用 IPv6 防火墙链？"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:5001
+msgid ""
+"Please specify whether the MiniUPnP daemon should run its ip6tables script "
+"on startup to initialize the IPv6 firewall chain."
+msgstr ""
+"请指定 MiniUPnP 守护程序是否应在启动时运行其 ip6tables 脚本以初始化 IPv6 防火"
+"墙链。"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:5001
+msgid ""
+"Note: This option is useless if you don't block any IPv6 forwarded traffic."
+msgstr "注意：如果您未阻挡任何 IPv6 转发流量，则此选项对您无用。"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:6001
+msgid "Force reporting IGDv1 in rootDesc?"
+msgstr "强制在 rootDesc 中报告 IGDv1？"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:6001
+msgid ""
+"Some IGD clients (most notably Microsoft® Windows® BITS) look for IGDv1 and "
+"do not recognize IGDv2 as a valid IGD service. This option will fool them by "
+"pretending itself to be IGDv1."
+msgstr ""
+"某些 IGD 客户端（特别是 Microsoft® Windows® BITS）只识别 IGDv1，不把 IGDv2 看"
+"作有效的 IGD 服务。这个选项会将自己假装成 IGDv1 来欺骗他们。"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:6001
+msgid ""
+"Of course you will lose IGDv2 functions (notably IPv6 support) by enabling "
+"this."
+msgstr "当然，启用此选项，您将失去 IGDv2 功能（特别是 IPv6 支持）。"

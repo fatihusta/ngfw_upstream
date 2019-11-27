@@ -1,0 +1,135 @@
+# German debconf translation of miniupnpd.
+# This file is distributed under the same license as the miniupnpd package.
+# Copyright (C) 2005-2012 Thomas Bernard, 2006 Ryan Wagoner.
+# Copyright (C) of this file 2013 -2109 Chris Leick <c.leick@vollbio.de>.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: miniupnpd 2.1-3\n"
+"Report-Msgid-Bugs-To: miniupnpd@packages.debian.org\n"
+"POT-Creation-Date: 2019-01-06 21:56+0800\n"
+"PO-Revision-Date: 2019-01-19 16:08+0100\n"
+"Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
+"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:2001
+msgid "Start the MiniUPnP daemon automatically?"
+msgstr "Den MiniUPnP-Daemon automatisch starten?"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:2001
+msgid ""
+"Choose this option if the MiniUPnP daemon should start automatically, now "
+"and at boot time."
+msgstr ""
+"Wählen Sie diese Option, falls der MiniUPnP-Daemon jetzt und beim Hochfahren "
+"des Rechners automatisch gestartet werden soll."
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:3001
+msgid "Interfaces to listen on for UPnP queries:"
+msgstr "Schnittstellen, an denen auf UPnP-Anfragen gewartet werden soll:"
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:3001
+msgid ""
+"The MiniUPnP daemon will listen for requests on the local network. Please "
+"enter the interfaces or IP addresses it should listen on, separated by space."
+msgstr ""
+"Der MiniUPnP-Daemon wird auf Anfragen aus dem lokalen Netzwerk warten. Bitte "
+"geben Sie, durch Leerzeichen getrennt, die Schnittstellen oder IP-Adressen "
+"an, auf denen er Anfragen annehmen soll."
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:3001
+msgid ""
+"Interface names are preferred, and required if you plan to enable IPv6 port "
+"forwarding."
+msgstr ""
+"Schnittstellennamen werden bevorzugt und sind erforderlich, falls Sie IPv6-"
+"Portweiterleitung aktivieren möchten."
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:4001
+msgid "External WAN network interface to open ports on:"
+msgstr ""
+"Externe WAN-Netzwerkschnittstelle, auf der Ports geöffnet werden sollen:"
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:4001
+msgid ""
+"The MiniUPnP daemon will listen on a specific IP address on the local "
+"network, then open ports on the WAN interface. Please enter the name of the "
+"WAN network interface on which the MiniUPnP daemon should perform port "
+"forwarding."
+msgstr ""
+"Der MiniUPnP-Daemon wird auf Anfragen auf einer bestimmten IP-Adresse im "
+"lokalen Netzwerk warten und dann Ports auf der WAN-Schnittstelle öffnen. "
+"Bitte geben Sie den Namen der WAN-Netzwerkschnittstelle an, auf die der "
+"MiniUPnP-Daemon Port-Weiterleitung durchführen soll."
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:5001
+msgid "Enable IPv6 firewall chain?"
+msgstr "IPv6-Firewall-Regelkette aktivieren?"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:5001
+msgid ""
+"Please specify whether the MiniUPnP daemon should run its ip6tables script "
+"on startup to initialize the IPv6 firewall chain."
+msgstr ""
+"Bitte geben Sie an, ob der MiniUPnP-Daemon beim Starten sein Skript "
+"»ip6tables« ausführen soll, um die IPv6-Firewall-Regelkette zu "
+"initialisieren."
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:5001
+msgid ""
+"Note: This option is useless if you don't block any IPv6 forwarded traffic."
+msgstr ""
+"Hinweis: Diese Option ist nutzlos, falls Sie keinen weitergeleiteten IPv6-"
+"Verkehr blockieren."
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:6001
+msgid "Force reporting IGDv1 in rootDesc?"
+msgstr "Soll das Melden von IGDv1 in rootDesc erzwungen werden?"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:6001
+msgid ""
+"Some IGD clients (most notably Microsoft® Windows® BITS) look for IGDv1 and "
+"do not recognize IGDv2 as a valid IGD service. This option will fool them by "
+"pretending itself to be IGDv1."
+msgstr ""
+"Einige IGD-Clients (insbesondere Microsoft® Windows® BITS) suchen nach IGDv1 "
+"und erkennen IGDv2 nicht als gültigen IGD-Dienst. Diese Option wird sie "
+"austricksen, indem sie sich selbst als IGDv1 ausgibt."
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:6001
+msgid ""
+"Of course you will lose IGDv2 functions (notably IPv6 support) by enabling "
+"this."
+msgstr ""
+"Durch Aktivieren dieser Option, werden Sie natürlich IGDv2-Funktionen "
+"einbüßen (insbesondere IPv6-Unterstützung)."

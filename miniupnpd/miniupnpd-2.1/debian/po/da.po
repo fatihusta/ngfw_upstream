@@ -1,0 +1,131 @@
+# Danish translation miniupnpd.
+# Copyright (C) 2019 miniupnpd & nedenstående oversættere.
+# This file is distributed under the same license as the miniupnpd package.
+# Joe Hansen (joedalton2@yahoo.dk), 2013, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: miniupnpd\n"
+"Report-Msgid-Bugs-To: miniupnpd@packages.debian.org\n"
+"POT-Creation-Date: 2019-01-06 21:56+0800\n"
+"PO-Revision-Date: 2019-02-24 12:42+0000\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:2001
+msgid "Start the MiniUPnP daemon automatically?"
+msgstr "Start MiniUPnP-dæmonen op automatisk?"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:2001
+msgid ""
+"Choose this option if the MiniUPnP daemon should start automatically, now "
+"and at boot time."
+msgstr ""
+"Vælg denne indstilling hvis MiniUPnP-dæmonen skal starte op automatisk, nu "
+"og ved opstartstidspunktet."
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:3001
+msgid "Interfaces to listen on for UPnP queries:"
+msgstr "Grænseflader at lytte på efter UPnP-forespørgsler:"
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:3001
+msgid ""
+"The MiniUPnP daemon will listen for requests on the local network. Please "
+"enter the interfaces or IP addresses it should listen on, separated by space."
+msgstr ""
+"MiniUPnP-dæmonen vil lytte efter forespørgsler på det lokale netværk. "
+"Indtast venligst IP-adressen den skal lytte på, adskilt af mellemrum."
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:3001
+msgid ""
+"Interface names are preferred, and required if you plan to enable IPv6 port "
+"forwarding."
+msgstr ""
+"Grænsefladenavne foretrækkes, og kræves hvis du planlægger at aktivere "
+"IPv6-portomdirigering."
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:4001
+msgid "External WAN network interface to open ports on:"
+msgstr "Ekstern WAN-netværksgrænseflade til at åbne porte på:"
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:4001
+msgid ""
+"The MiniUPnP daemon will listen on a specific IP address on the local "
+"network, then open ports on the WAN interface. Please enter the name of the "
+"WAN network interface on which the MiniUPnP daemon should perform port "
+"forwarding."
+msgstr ""
+"MiniUPnP-dæmonen vil lytte på en specifik IP-adresse på det lokale netværk, "
+"og så åbne porte på WAN-grænsefladen. Indtast venligst navnet på WAN-"
+"netværksgrænsefladen hvor MiniUPnP-dæmonen skal udføre portvideresendelse."
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:5001
+msgid "Enable IPv6 firewall chain?"
+msgstr "Aktiver IPv6-brandmurskæde?"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:5001
+msgid ""
+"Please specify whether the MiniUPnP daemon should run its ip6tables script "
+"on startup to initialize the IPv6 firewall chain."
+msgstr ""
+"Specificer venligst om MiniUPnP-dæmonen skal køre sit ip6tables-skript ved "
+"opstart for at initialisere IPv6-brandmurskæden."
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:5001
+msgid ""
+"Note: This option is useless if you don't block any IPv6 forwarded traffic."
+msgstr ""
+"Bemærk: Denne indstilling er ubrugelig hvis du ikke blokerer IPv6-omdirigeret "
+"trafik."
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:6001
+msgid "Force reporting IGDv1 in rootDesc?"
+msgstr "Fremtving rapportering af IGDv1 i rootDesc?"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:6001
+msgid ""
+"Some IGD clients (most notably Microsoft® Windows® BITS) look for IGDv1 and "
+"do not recognize IGDv2 as a valid IGD service. This option will fool them by "
+"pretending itself to be IGDv1."
+msgstr ""
+"Nogle IGD-klienter (især kendt Microsoft® Windows® BITS) kigger efter IGDv1 "
+"og anerkender ikke IGDv2 som en gyldig IGD-tjeneste. Denne indstilling vil "
+"snyde dem ved at udgive sig for at være IGDv1."
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:6001
+msgid ""
+"Of course you will lose IGDv2 functions (notably IPv6 support) by enabling "
+"this."
+msgstr ""
+"Du vil selvfølgelig miste IGDv2-funktioner (især IPv6-understøttelse) ved at "
+"aktivere dette."

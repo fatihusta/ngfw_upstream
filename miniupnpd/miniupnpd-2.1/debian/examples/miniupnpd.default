@@ -1,0 +1,7 @@
+# This defines other options which you might want to use when
+# starting MiniUPnPd.
+MiniUPnPd_OTHER_OPTIONS=""
+
+# If this option is 1, then the init script will initialize
+# the ipv6 tables.
+MiniUPnPd_ip6tables_enable=

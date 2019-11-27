@@ -1,0 +1,36 @@
+Source: miniupnpd
+Section: net
+Priority: optional
+Maintainer: Thomas Goirand <zigo@debian.org>
+Uploaders:
+ Yangfl <mmyangfl@gmail.com>,
+Build-Depends:
+ debhelper (>= 12~),
+ iptables-dev,
+ pkg-config,
+ po-debconf,
+Standards-Version: 4.3.0
+Vcs-Browser: https://salsa.debian.org/miniupnp-team/miniupnpd
+Vcs-Git: https://salsa.debian.org/miniupnp-team/miniupnpd.git
+Homepage: http://miniupnp.free.fr/
+
+Package: miniupnpd
+Architecture: linux-any
+Pre-Depends:
+ ${misc:Pre-Depends},
+Depends:
+ debconf,
+ iproute2,
+ iptables,
+ lsb-base,
+ net-tools,
+ uuid-runtime,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: UPnP and NAT-PMP daemon for gateway routers
+ MiniUPnPd is a small daemon which can be installed on a NAT router to
+ provide UPnP Internet Gateway Device and Port Mapping Protocol services,
+ enabling clients on the LAN to ask for port redirections. It is
+ compatible with peer-to-peer software, messaging applications, and games
+ consoles that connect to online services (including Xbox LIVE and the
+ PlayStation Network).

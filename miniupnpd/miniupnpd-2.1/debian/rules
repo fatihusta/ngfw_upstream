@@ -1,0 +1,68 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE = 1
+
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	$(MAKE) -f Makefile.linux clean
+	rm -rf config.h
+
+override_dh_clean:
+	if [ -h Makefile ]; then \
+		mv Makefile.bsd Makefile; \
+	fi
+	dh_clean
+
+override_dh_auto_configure:
+	if [ ! -h Makefile ]; then \
+		mv Makefile Makefile.bsd; \
+		ln -s Makefile.linux Makefile; \
+	fi
+	dh_auto_configure
+
+override_dh_auto_build:
+	dh_auto_build -- CONFIG_OPTIONS="--igd2 --ipv6 --leasefile --vendorcfg --pcp-peer --portinuse"
+
+override_dh_auto_test:
+	# some test scripts missing from the tarball
+
+override_dh_auto_install:
+	dh_auto_install -- STRIP=echo
+
+	# Move the miniupnpd.conf in /usr/share so it's not marked as CONFFILE
+	mkdir -p $(CURDIR)/debian/miniupnpd/usr/share/miniupnpd
+	mv $(CURDIR)/debian/miniupnpd/etc/miniupnpd/miniupnpd.conf $(CURDIR)/debian/miniupnpd/usr/share/miniupnpd/
+	sed -i " \
+		/^secure_mode=no/ d; \
+		/^notify_interval=60/ d; \
+		s/^clean_ruleset_interval=600/#clean_ruleset_interval=600/; \
+		s/^allow/#allow/; \
+		s/^deny/#deny/; \
+		s/^uuid=.*/uuid=/; \
+	" $(CURDIR)/debian/miniupnpd/usr/share/miniupnpd/miniupnpd.conf
+
+	# Copy the /etc/default/miniupnpd to /usr/share
+	cp $(CURDIR)/debian/examples/miniupnpd.default $(CURDIR)/debian/miniupnpd/usr/share/miniupnpd/
+
+override_dh_installinit:
+	dh_installinit --no-enable --no-start
+
+override_dh_installsystemd:
+	dh_installsystemd --no-enable --no-start
+
+display-po-stats:
+	cd $(CURDIR)/debian/po ; for i in *.po ; do \
+		echo -n $$i": " ; \
+		msgfmt -o /dev/null --statistic $$i ; \
+	done
+
+call-for-po-trans:
+	podebconf-report-po --call --withtranslators --languageteam

@@ -1,0 +1,53 @@
+# These templates have been reviewed by the debian-l10n-english
+# team
+#
+# If modifications/additions/rewording are needed, please ask
+# debian-l10n-english@lists.debian.org for advice.
+#
+# Even minor modifications require translation updates and such
+# changes should be coordinated with translators and reviewers.
+
+Template: miniupnpd/start_daemon
+Type: boolean
+Default: false
+_Description: Start the MiniUPnP daemon automatically?
+ Choose this option if the MiniUPnP daemon should start automatically,
+ now and at boot time.
+
+Template: miniupnpd/listen
+Type: string
+_Description: Interfaces to listen on for UPnP queries:
+ The MiniUPnP daemon will listen for requests on the local network. Please
+ enter the interfaces or IP addresses it should listen on, separated by
+ space.
+ .
+ Interface names are preferred, and required if you plan to enable IPv6 port
+ forwarding.
+
+Template: miniupnpd/iface
+Type: string
+_Description: External WAN network interface to open ports on:
+ The MiniUPnP daemon will listen on a specific IP address on the local
+ network, then open ports on the WAN interface. Please enter the name of
+ the WAN network interface on which the MiniUPnP daemon should perform
+ port forwarding.
+
+Template: miniupnpd/ip6script
+Type: boolean
+Default: false
+_Description: Enable IPv6 firewall chain?
+ Please specify whether the MiniUPnP daemon should run its
+ ip6tables script on startup to initialize the IPv6 firewall chain.
+ .
+ Note: This option is useless if you don't block any IPv6 forwarded traffic.
+
+Template: miniupnpd/force_igd_desc_v1
+Type: boolean
+Default: false
+_Description: Force reporting IGDv1 in rootDesc?
+ Some IGD clients (most notably Microsoft® Windows® BITS) look for IGDv1 and do
+ not recognize IGDv2 as a valid IGD service. This option will fool them by
+ pretending itself to be IGDv1.
+ .
+ Of course you will lose IGDv2 functions (notably IPv6 support) by enabling
+ this.

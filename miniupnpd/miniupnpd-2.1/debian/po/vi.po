@@ -1,0 +1,133 @@
+# This file is distributed under the same license as the miniupnpd package.
+# Trần Ngọc Quân <vnwildman@gmail.com>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: miniupnpd\n"
+"Report-Msgid-Bugs-To: miniupnpd@packages.debian.org\n"
+"POT-Creation-Date: 2019-01-06 21:56+0800\n"
+"PO-Revision-Date: 2019-01-31 15:36+0700\n"
+"Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
+"Language-Team: debian-l10n-vietnamese@lists.debian.org\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:2001
+msgid "Start the MiniUPnP daemon automatically?"
+msgstr "Khởi động dịch vụ MiniUPnP một cách tự động?"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:2001
+msgid ""
+"Choose this option if the MiniUPnP daemon should start automatically, now "
+"and at boot time."
+msgstr ""
+"Chọn tùy chọn này nếu dịch vụ MiniUPnP nên tự khởi động, ngay bây giờ và vào "
+"lúc khởi động."
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:3001
+msgid "Interfaces to listen on for UPnP queries:"
+msgstr "Giao diện để lắng nghe các truy vấn UPnP:"
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:3001
+msgid ""
+"The MiniUPnP daemon will listen for requests on the local network. Please "
+"enter the interfaces or IP addresses it should listen on, separated by space."
+msgstr ""
+"Dịch vụ MiniUPnP sẽ lắng nghe cho các yêu cầu trên mạng cục bộ. Xin vui lòng "
+"nhập các giao diện hoặc địa chỉ IP nó cần lắng nghe, cách nhau bằng khoảng "
+"trắng."
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:3001
+msgid ""
+"Interface names are preferred, and required if you plan to enable IPv6 port "
+"forwarding."
+msgstr ""
+"Tên giao diện được ưa thích, và là bắt buộc nếu bạn định bật chuyển tiếp "
+"cổng IPv6."
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:4001
+msgid "External WAN network interface to open ports on:"
+msgstr "Giao diện mạng WAN bên ngoài để mở cổng trên:"
+
+#. Type: string
+#. Description
+#: ../miniupnpd.templates:4001
+msgid ""
+"The MiniUPnP daemon will listen on a specific IP address on the local "
+"network, then open ports on the WAN interface. Please enter the name of the "
+"WAN network interface on which the MiniUPnP daemon should perform port "
+"forwarding."
+msgstr ""
+"Dịch vụ MiniUPnP sẽ lắng nghe trên một địa chỉ IP cụ thể trên mạng cục bộ, "
+"sau đó mở các cổng trên giao diện WAN. Xin vui lòng nhập tên của giao diện "
+"mạng WAN mà trên đó các Dịch vụ MiniUPnP nên thực hiện chuyển tiếp cổng."
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:5001
+msgid "Enable IPv6 firewall chain?"
+msgstr "Cho phép móc xích tường lửa IPv6?"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:5001
+msgid ""
+"Please specify whether the MiniUPnP daemon should run its ip6tables script "
+"on startup to initialize the IPv6 firewall chain."
+msgstr ""
+"Xin vui lòng chỉ định liệu dịch vụ MiniUPnP có nên chạy kịch bản ip6tables "
+"của nó lúc khởi động để khởi tạo móc xích tường lửa IPv6."
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:5001
+msgid ""
+"Note: This option is useless if you don't block any IPv6 forwarded traffic."
+msgstr ""
+"Lưu ý: tùy chọn này là vô ích nếu bạn không chặn bất kỳ IPv6 chuyển tiếp lưu "
+"thông."
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:6001
+msgid "Force reporting IGDv1 in rootDesc?"
+msgstr "Buộc báo cáo IGDv1 trong rootDesc?"
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:6001
+msgid ""
+"Some IGD clients (most notably Microsoft® Windows® BITS) look for IGDv1 and "
+"do not recognize IGDv2 as a valid IGD service. This option will fool them by "
+"pretending itself to be IGDv1."
+msgstr ""
+"Một số máy khách IGD (nhất là Microsoft® Windows® BITS) có tìm kiếm IGDv1 và "
+"không nhận ra IGDv2 như là một dịch vụ IGD hợp lệ. Tùy chọn này sẽ  lừa "
+"chúng bằng các giả vờ nó là IGDv1."
+
+#. Type: boolean
+#. Description
+#: ../miniupnpd.templates:6001
+msgid ""
+"Of course you will lose IGDv2 functions (notably IPv6 support) by enabling "
+"this."
+msgstr ""
+"Dĩ nhiên là bạn sẽ mất các tính năng IGDv2 (đặc biệt nhất là hỗ trợ IPv6) "
+"nếu bật cái này."

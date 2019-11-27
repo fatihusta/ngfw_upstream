@@ -1,0 +1,7 @@
+miniupnpd-allow-ipv4-listening-specify.patch
+remove-unused-libssl-dep.patch
+CVE-2019-12107_upnp_event_prepare_check_the_return_value_of_snprintf.patch
+CVE-2019-12108_GetOutboundPinholeTimeout_check_args.patch
+CVE-2019-12109_fix_error_from_commit_13585f1.patch
+CVE-2019-12110_upnp_redirect_accept_NULL_desc_argument.patch
+CVE-2019-12111_pcpserver.c_copyIPv6IfDifferent_check_for_NULL_src_argument.patch
