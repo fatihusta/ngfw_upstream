@@ -177,7 +177,7 @@ static const char * getPCPOpCodeStr(uint8_t opcode)
  * buffers are same */
 static void copyIPv6IfDifferent(void * dest, const void * src)
 {
-	if(dest != src && src != NULL) {
+	if(dest != src) {
 		memcpy(dest, src, sizeof(struct in6_addr));
 	}
 }

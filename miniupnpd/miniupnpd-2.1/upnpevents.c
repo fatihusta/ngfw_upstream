@@ -443,34 +443,19 @@ static void upnp_event_prepare(struct upnp_event_notify * obj)
 		l = 0;
 	}
 	obj->buffersize = 1024;
-	for (;;) {
-		obj->buffer = malloc(obj->buffersize);
-		if(!obj->buffer) {
-			syslog(LOG_ERR, "%s: malloc returned NULL", "upnp_event_prepare");
-			if(xml) {
-				free(xml);
-			}
-			obj->state = EError;
-			return;
+	obj->buffer = malloc(obj->buffersize);
+	if(!obj->buffer) {
+		syslog(LOG_ERR, "%s: malloc returned NULL", "upnp_event_prepare");
+		if(xml) {
+			free(xml);
 		}
-		obj->tosend = snprintf(obj->buffer, obj->buffersize, notifymsg,
-		                       obj->path, obj->addrstr, obj->portstr, l+2,
-		                       obj->sub->uuid, obj->sub->seq,
-		                       l, xml);
-		if (obj->tosend < 0) {
-			syslog(LOG_ERR, "%s: snprintf() failed", "upnp_event_prepare");
-			if(xml) {
-				free(xml);
-			}
-			obj->state = EError;
-			return;
-		} else if (obj->tosend < obj->buffersize) {
-			break; /* the buffer was large enough */
-		}
-		/* Try again with a buffer big enough */
-		free(obj->buffer);
-		obj->buffersize = obj->tosend + 1;	/* reserve space for the final 0 */
+		obj->state = EError;
+		return;
 	}
+	obj->tosend = snprintf(obj->buffer, obj->buffersize, notifymsg,
+	                       obj->path, obj->addrstr, obj->portstr, l+2,
+	                       obj->sub->uuid, obj->sub->seq,
+	                       l, xml);
 	if(xml) {
 		free(xml);
 		xml = NULL;

@@ -1001,10 +1001,20 @@ parselanaddr(struct lan_addr_s * lan_addr, const char * str)
 			fprintf(stderr, "Cannot get index for network interface %s",
 			        lan_addr->ifname);
 	}
+#ifdef ENABLE_IPV6
+	else
+	{
+		fprintf(stderr,
+		        "Error: please specify LAN network interface by name instead of IPv4 address : %s\n",
+		        str);
+		return -1;
+	}
+#else
 	else
 	{
 		syslog(LOG_NOTICE, "it is advised to use network interface name instead of %s", str);
 	}
+#endif
 	return 0;
 parselan_error:
 	fprintf(stderr, "Error parsing address/mask (or interface name) : %s\n",

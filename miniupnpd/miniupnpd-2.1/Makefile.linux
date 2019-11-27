@@ -153,6 +153,8 @@ LDLIBS += $(shell $(PKG_CONFIG) --static --libs-only-l libmnl)
 LDLIBS += $(shell $(PKG_CONFIG) --static --libs-only-l libnetfilter_conntrack)
 endif # ($(TEST),1)
 
+LDLIBS += $(shell $(PKG_CONFIG) --static --libs-only-l libssl)
+
 TEST := $(shell $(PKG_CONFIG) --exists uuid && echo 1)
 ifeq ($(TEST),1)
 LDLIBS += $(shell $(PKG_CONFIG) --static --libs-only-l uuid)
