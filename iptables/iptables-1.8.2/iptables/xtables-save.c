@@ -103,9 +103,8 @@ do_output(struct nft_handle *h, const char *tablename, bool counters)
 		return !!ret;
 	}
 
-	if (!nft_table_find(h, tablename) &&
-	    !nft_table_builtin_find(h, tablename)) {
-		fprintf(stderr, "Table `%s' does not exist\n", tablename);
+	if (!nft_table_find(h, tablename)) {
+		printf("Table `%s' does not exist\n", tablename);
 		return 1;
 	}
 

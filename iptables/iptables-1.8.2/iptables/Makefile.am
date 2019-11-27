@@ -62,8 +62,7 @@ man_MANS         = iptables.8 iptables-restore.8 iptables-save.8 \
                    iptables-xml.1 ip6tables.8 ip6tables-restore.8 \
                    ip6tables-save.8 iptables-extensions.8 \
                    xtables-nft.8 xtables-translate.8 xtables-legacy.8 \
-                   xtables-monitor.8 iptables-apply.8 ip6tables-apply.8
-sbin_SCRIPT	 = iptables-apply
+                   xtables-monitor.8
 CLEANFILES       = iptables.8 xtables-monitor.8 \
 		   xtables-config-parser.c xtables-config-syntax.c
 
@@ -105,4 +104,3 @@ install-exec-hook:
 	for i in ${v4_sbin_links}; do ${LN_S} -f xtables-legacy-multi "${DESTDIR}${sbindir}/$$i"; done;
 	for i in ${v6_sbin_links}; do ${LN_S} -f xtables-legacy-multi "${DESTDIR}${sbindir}/$$i"; done;
 	for i in ${x_sbin_links}; do ${LN_S} -f xtables-nft-multi "${DESTDIR}${sbindir}/$$i"; done;
-	${LN_S} -f iptables-apply "${DESTDIR}${sbindir}/ip6tables-apply"
