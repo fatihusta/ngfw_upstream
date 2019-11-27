@@ -8,6 +8,7 @@ iptables/iptables-1.6.0 					stretch
 iptables/iptables-1.8.2 					buster
 $sleep 40                                                       stretch
 miniupnpd/miniupnpd-1.8 					stretch
+miniupnpd/miniupnpd-2.1 					buster
 $sleep 40                                                       stretch
 libnftnl/libnftnl-1.0.7						stretch
 nftables/nftables-0.7						stretch
