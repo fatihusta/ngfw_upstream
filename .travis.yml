@@ -5,9 +5,6 @@ services:
 
 env:
   - REPOSITORY: stretch
-    DISTRIBUTION: release-142
-    PKGTOOLS_COMMIT: origin/release-14.2
-  - REPOSITORY: stretch
     DISTRIBUTION: current
     PKGTOOLS_COMMIT: origin/master
   - REPOSITORY: buster
