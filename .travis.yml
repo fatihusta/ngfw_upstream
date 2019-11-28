@@ -13,7 +13,7 @@ env:
     - REPOSITORY: buster
       DISTRIBUTION: current
       PKGTOOLS_COMMIT: origin/master
-      UPLOAD: ssh
+      UPLOAD: scp
 
 before_install:
 - docker pull untangleinc/ngfw:${REPOSITORY}-build
