@@ -2,36 +2,31 @@
 # This file is in the public domain.
 # You may freely use, modify, distribute, a
 
-export GOPATH=$(CURDIR)
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/default.mk
 
-PKGDIR=debian/drive
+DPKG_EXPORT_BUILDTOOLS = 1
+include /usr/share/dpkg/buildtools.mk
+
+DESTDIR = $(CURDIR)/debian/drive
+export GOPATH=$(CURDIR)
 
 %:
 	dh $@ 
 
-clean:
+override_dh_clean:
 	dh_clean
-	rm -rf $(GOPATH)/bin/* $(GOPATH)/pkg/*
-	#cd $(GOPATH)/src && find * -name '*.go' -exec dirname {} \; | xargs -n1 go clean
-	rm -f $(GOPATH)/goinstall.log
+	rm -rf $(CURDIR)/bin/* $(CURDIR)/pkg/*
+	rm -f $(CURDIR)/goinstall.log
 
-binary-arch: clean
-	dh_prep
-	dh_installdirs
+override_dh_auto_build-arch:
 	cd $(GOPATH)/src/github.com/odeke-em/drive/cmd/drive/ && find * -name '*.go' -exec dirname {} \; | xargs -n1 go install
 	cd $(GOPATH)/src/github.com/odeke-em/drive/drive-server/ && find * -name '*.go' -exec dirname {} \; | xargs -n1 go install
-	mkdir -p $(PKGDIR)/usr/bin
-	cp $(GOPATH)/bin/* $(PKGDIR)/usr/bin/
-	mkdir -p $(PKGDIR)/usr/share/icons
-	dh_install /src/github.com/odeke-em/drive/icons/*png /usr/share/icons/hicolor/128x128/mimetypes/
-	dh_install /src/github.com/odeke-em/drive/icons/*svg /usr/share/icons/hicolor/scalable/mimetypes/
-	dh_installchangelogs
-	dh_strip
-	dh_compress
-	dh_fixperms
-	dh_installdeb
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
 
-binary: binary-arch
+override_dh_install-arch:
+	mkdir -p $(DESTDIR)/usr/bin
+	cp $(CURDIR)/bin/* $(DESTDIR)/usr/bin/
+	mkdir -p $(DESTDIR)/usr/share/icons/hicolor/128x128/mimetypes/
+	cp $(CURDIR)/src/github.com/odeke-em/drive/icons/*.png $(DESTDIR)/usr/share/icons/hicolor/128x128/mimetypes/
+	cp $(CURDIR)/src/github.com/odeke-em/drive/icons/*.svg $(DESTDIR)/usr/share/icons/hicolor/128x128/mimetypes/
