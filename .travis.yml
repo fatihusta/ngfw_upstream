@@ -24,6 +24,7 @@ env:
       ARCHITECTURE: i386
       PKGTOOLS_COMMIT: origin/master
       UPLOAD: scp
+      DEBUG: 1
 
 before_install:
 - docker pull untangleinc/ngfw:${REPOSITORY}-build-${ARCHITECTURE}
