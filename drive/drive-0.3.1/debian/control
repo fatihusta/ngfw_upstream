@@ -2,7 +2,7 @@ Source: drive
 Section: net
 Priority: extra
 Maintainer: Sebastien Delafond <sdelafond@gmail.com>
-Build-Depends: debhelper (>= 10), golang-go, git
+Build-Depends: debhelper (>= 10), golang-go , git
 Standards-Version: 3.9.8
 Homepage: https://github.com/odeke-em/drive
 

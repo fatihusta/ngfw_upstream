@@ -11,6 +11,8 @@ DPKG_EXPORT_BUILDTOOLS = 1
 
 DESTDIR = $(CURDIR)/debian/drive
 export GOPATH=$(CURDIR)
+# FIXME
+export GOARCH=$(shell dpkg-architecture -qDEB_TARGET_ARCH_CPU)
 
 %:
 	dh $@ 
@@ -26,7 +28,7 @@ override_dh_auto_build-arch:
 
 override_dh_install-arch:
 	mkdir -p $(DESTDIR)/usr/bin
-	cp $(CURDIR)/bin/* $(DESTDIR)/usr/bin/
+	find $(CURDIR)/bin -type f -exec cp {} $(DESTDIR)/usr/bin/ \;
 	mkdir -p $(DESTDIR)/usr/share/icons/hicolor/128x128/mimetypes/
 	cp $(CURDIR)/src/github.com/odeke-em/drive/icons/*.png $(DESTDIR)/usr/share/icons/hicolor/128x128/mimetypes/
 	cp $(CURDIR)/src/github.com/odeke-em/drive/icons/*.svg $(DESTDIR)/usr/share/icons/hicolor/128x128/mimetypes/

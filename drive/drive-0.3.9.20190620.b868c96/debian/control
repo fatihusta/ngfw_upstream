@@ -2,7 +2,12 @@ Source: drive
 Section: net
 Priority: extra
 Maintainer: Sebastien Delafond <sdelafond@gmail.com>
-Build-Depends: debhelper (>= 10), golang-go (>= 1.9), git, libc6-dev, libgcc-6-dev | libgcc-8-dev
+Build-Depends:
+ debhelper (>= 10),
+ libc6-dev,
+ libgcc-6-dev | libgcc-8-dev,
+ git,
+ golang-go:native (>= 1.9)
 Standards-Version: 3.9.8
 Homepage: https://github.com/odeke-em/drive
 
