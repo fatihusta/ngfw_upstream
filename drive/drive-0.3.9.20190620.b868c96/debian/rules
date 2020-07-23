@@ -11,8 +11,12 @@ DPKG_EXPORT_BUILDTOOLS = 1
 
 DESTDIR = $(CURDIR)/debian/drive
 export GOPATH=$(CURDIR)
-# FIXME
-export GOARCH=$(shell dpkg-architecture -qDEB_TARGET_ARCH_CPU)
+
+ifeq ($(ARCHITECTURE), i386)
+  export GOARCH=386
+else
+  export GOARCH=$(shell dpkg-architecture -qDEB_TARGET_ARCH_CPU)
+endif
 
 %:
 	dh $@ 
