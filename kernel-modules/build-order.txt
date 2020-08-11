@@ -1,1 +1,1 @@
-lanner-lcd		stretch
+lanner-lcd		buster
