@@ -1,6 +1,7 @@
-lanner-lcd-source (0.1.0-1) unstable; urgency=low
+lanner-lcd (0.2.0-1) unstable; urgency=low
 
   * Initial release.
 
- -- Sebastien Delafond <seb@untangle.com>  Wed, 23 Sep 2015 03:02:55 -0400
+ -- Sebastien Delafond <sdelafond@gmail.com>  Tue, 10 Nov 2020 11:00:49 +0100
+
 

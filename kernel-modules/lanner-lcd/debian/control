@@ -1,16 +1,12 @@
-Source: lanner-lcd-source
+Source: lanner-lcd
 Section: main/kernel
 Priority: extra
 Maintainer: Sebastien Delafond <sdelafond@gmail.com>
-Build-Depends: debhelper (>= 10), dpatch
-Build-Depends-Indep: debconf-utils
+Build-Depends: debhelper (>= 10), dkms, dh-exec
 Standards-Version: 3.9.8
 
-Package: lanner-lcd-source
+Package: lanner-lcd-dkms
 Architecture: all
-Depends: ${misc:Depends}, module-assistant
-Recommends:  dpkg-dev, kernel-package, debhelper (>= 10), debconf-utils
-Description: module source for lanner-lcd
- This package provides the source code for the lanner-lcd module.. You
- will need make-kpkg from kernel-package to be able to compile modules
- usable with a Debian kernel.
+Depends: ${misc:Depends}
+Description: lanner-lcd kernel module
+ This package installs the lanner-lcd kernel module.
