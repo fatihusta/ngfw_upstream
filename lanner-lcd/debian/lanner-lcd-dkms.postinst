@@ -1,40 +1,23 @@
 #! /bin/sh
 
-set -e
-
-exec >> /var/log/uvm/kernel-modules.log 2>&1
-
-KVERS=$(echo $DPKG_MAINTSCRIPT_PACKAGE | perl -pe 's/.+-3.2/3.2/')
-
-date -Iseconds
-echo $KVERS
-
-DEV="plcm_drv"
+MODULE="plcm_drv"
+DEVICE="/dev/${MODULE}"
 
 # if the hardcoded node exists on the
-# 4.x kernel, delete it, else make sure
-# its got the right permissions
-if ls -al /dev/$DEV | grep -q 248 ; then
-  if uname -r | grep '^4' ; then
-    rm /dev/$DEV
-  else
-    chmod 666 /dev/$DEV
-  fi
-fi
-
-# only run mknod on the 3.16 kernel
-if grep -q $DEV /etc/rc.local ; then
-  sed -i "s/^mknod \/dev\/$DEV c 248 0/if uname -r | grep -q \'^3\'\; then mknod -m 666 \/dev\/$DEV c 248 0 ; fi/g" /etc/rc.local
+# 4.x kernel, delete it
+if [ -e ${DEVICE} ] ; then
+  rm ${DEVICE}
 fi
 
 # load the module at boot
-if ! grep -q $DEV /etc/modules ; then
-  echo $DEV >> /etc/modules
+if ! grep -q $MODULE /etc/modules ; then
+  echo $MODULE >> /etc/modules
 fi
 
 # the next 2 will fail during initial install
 depmod -a || true
-modprobe $DEV || true
+modprobe $MODULE || true
+
 #DEBHELPER#
 
 exit 0
