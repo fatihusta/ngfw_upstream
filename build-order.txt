@@ -8,6 +8,4 @@ miniupnpd/miniupnpd-1.8 					stretch
 miniupnpd/miniupnpd-2.1 					buster
 libnftnl/libnftnl-1.0.7						stretch
 nftables/nftables-0.7						stretch
-
-
-kernel-modules/lanner-lcd                                       stretch,buster
+lanner-lcd                                       		buster
