@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/bash
 
 MODULE="plcm_drv"
 DEVICE="/dev/${MODULE}"
@@ -15,8 +15,7 @@ if ! grep -q $MODULE /etc/modules ; then
 fi
 
 # the next 2 will fail during initial install
-depmod -a || true
-modprobe $MODULE || true
+{ depmod -a ; modprobe $MODULE ; } 2>/dev/null || true
 
 #DEBHELPER#
 
